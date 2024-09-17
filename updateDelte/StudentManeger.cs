@@ -42,26 +42,26 @@ namespace updateDelte
         {
             List<Student> students = new List<Student>();
 
-            // SQL bağlantı dizesi
+            
             string connectionString = "Data Source=DENIZ\\SQLEXPRESS;Initial Catalog=school;Integrated Security=True;Connect Timeout=30";
 
-            // SQL sorgusu
+            
             string query = "SELECT Student_Id, Student_Name, Student_LastName, Student_ClassName, Student_Class FROM Student";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                // SQL komut nesnesi oluşturuluyor
+                
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     try
                     {
-                        // Bağlantıyı aç
+                       
                         connection.Open();
 
-                        // Veritabanından verileri okuyan SqlDataReader kullan
+                    
                         SqlDataReader reader = command.ExecuteReader();
 
-                        // Her satırı okuyarak öğrenci listesine ekle
+                        
                         while (reader.Read())
                         {
                             Student student = new Student
@@ -73,7 +73,7 @@ namespace updateDelte
                                 Student_Class = Convert.ToInt32(reader["Student_Class"])
                             };
 
-                            students.Add(student); // Öğrenci listesine ekle
+                            students.Add(student); 
                         }
                     }
                     catch (Exception ex)
@@ -83,7 +83,7 @@ namespace updateDelte
                 }
             }
 
-            return students; // Öğrenci listesini döndür
+            return students; 
         }
 
     }

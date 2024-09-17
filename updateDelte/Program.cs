@@ -27,13 +27,13 @@ namespace updateDelte
             StudentManeger studentManager = new StudentManeger();
             List<Student> students = studentManager.List();
 
-            // Öğrencileri konsola yazdır
+        
             foreach (var student in students)
             {
                 Console.WriteLine($"ID: {student.Student_Id}, Adı: {student.Student_Name}, Soyadı: {student.Student_LastName}, Sınıf: {student.Student_ClassName}, Ders: {student.Student_Class}");
             }
 
-            Console.ReadLine(); // Konsol penceresinin kapanmaması için
+            Console.ReadLine(); 
         }
 
 
